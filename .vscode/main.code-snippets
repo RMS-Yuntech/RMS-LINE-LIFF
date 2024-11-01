@@ -1,0 +1,38 @@
+{
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+
+  "script setup (ts)": {
+    "scope": "vue",
+    "prefix": "setup",
+    "body": ["<script setup lang=\"ts\">", "$1", "</script>"],
+    "description": "Script setup component"
+  },
+  "new vue page": {
+    "scope": "vue",
+    "prefix": "new",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "$1",
+      "</script>",
+      "",
+      "<template>",
+      "  <div>",
+      "    $2",
+      "  </div>",
+      "</template>",
+      "",
+      "<style lang=\"scss\" scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Script setup component"
+  }
+}
