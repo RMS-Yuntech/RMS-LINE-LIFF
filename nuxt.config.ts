@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   // vite: {
   //   server: { hmr: { protocol: "wss" } },
   // },
+  nitro: {
+    preset: "static",
+  },
 
   css: ["~/styles/main.css"],
 

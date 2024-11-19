@@ -3,12 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
     "postinstall": "nuxt prepare",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "start": "node .output/server/index.mjs"
+    "preview": "nuxt preview"
   },
   "dependencies": {
     "nuxt": "3.13.2",
