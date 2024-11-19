@@ -68,5 +68,6 @@
     "nuxtjs",
     "Parens",
     "tailwindcss"
-  ]
+  ],
+  
 }

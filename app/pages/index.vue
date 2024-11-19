@@ -14,10 +14,18 @@
     </div>
 
     <!-- // 新增 label -->
-    <div class="flex flex-col gap-4 m-4">
-      <span class="text-2xl">分類</span>
+    <div class="flex flex-col gap-4 mb-2">
+      <span class="text-2xl">所有分類</span>
     </div>
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-wrap gap-4 justify-start">
+      <CardItem icon="i-heroicons-home" />
+      <CardItem icon="i-heroicons-home" />
+      <CardItem icon="i-heroicons-home" />
+      <CardItem icon="i-heroicons-home" />
+      <CardItem icon="i-heroicons-home" />
+      <CardItem icon="i-heroicons-home" />
+      <CardItem icon="i-heroicons-home" />
+      <CardItem icon="i-heroicons-home" />
       <CardItem icon="i-heroicons-home" />
       <CardItem icon="i-heroicons-home" />
     </div>
