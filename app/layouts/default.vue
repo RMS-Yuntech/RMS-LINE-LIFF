@@ -6,7 +6,7 @@
   <!-- Main Layout -->
   <div class="min-h-svh flex flex-col">
     <!-- Header -->
-    <header class="bg-primary rounded-b-[35px] shadow fixed-header">
+    <header class="bg-primary rounded-b-[35px] shadow mb-6 fixed-header">
       <!-- Toolbar -->
       <div class="px-8 pt-8 pb-16 relative">
         <div class="flex items-center justify-between">
