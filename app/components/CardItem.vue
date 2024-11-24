@@ -1,44 +1,45 @@
 <script setup lang="ts">
-// Define interface
-interface CardProps {
-  size?: "md" | "lg" | "xl";
-  icon: string;
-}
+  interface CardProps {
+    size?: 'md' | 'lg' | 'xl';
+    icon: string;
+    background?: string;
+  }
 
-const props = withDefaults(defineProps<CardProps>(), {
-  size: "md",
-});
+  const props = withDefaults(defineProps<CardProps>(), {
+    size: 'md',
+    background: 'bg-secondary'
+  });
 
-// Predefined Tailwind classes for different sizes
-const sizeClasses = {
-  md: {
-    card: "w-24 h-24",
-    icon: "w-8 h-8",
-  },
-  lg: {
-    card: "w-32 h-32",
-    icon: "w-12 h-12",
-  },
-  xl: {
-    card: "w-52 h-52",
-    icon: "w-24 h-24",
-  },
-};
+  // - 定義不同尺寸的卡片和圖示大小
+  const sizeClasses = {
+    md: {
+      card: 'w-24 h-24',
+      icon: 'w-8 h-8'
+    },
+    lg: {
+      card: 'w-32 h-32',
+      icon: 'w-12 h-12'
+    },
+    xl: {
+      card: 'w-52 h-52',
+      icon: 'w-24 h-24'
+    }
+  };
 
-// Compute the appropriate classes based on size prop
-const computedClasses = computed(() => {
-  return sizeClasses[props.size] || sizeClasses.md;
-});
+  // - 根據 props.size 取得對應的樣式
+  const computedClasses = computed(() => {
+    return sizeClasses[props.size] || sizeClasses.md;
+  });
 </script>
 
 <template>
   <UButton
     :class="[
       computedClasses.card,
-      'bg-secondary',
+      props.background,
       'flex',
       'items-center',
-      'justify-center',
+      'justify-center'
     ]"
   >
     <UIcon :name="props.icon" :class="[computedClasses.icon]" />

@@ -17,17 +17,16 @@
     <div class="flex flex-col gap-4 mb-2">
       <span class="text-2xl">所有分類</span>
     </div>
-    <div class="flex flex-wrap gap-4 justify-start">
+
+    <div class="flex flex-wrap gap-4 justify-center">
       <CardItem icon="i-heroicons-home" />
       <CardItem icon="i-heroicons-home" />
       <CardItem icon="i-heroicons-home" />
       <CardItem icon="i-heroicons-home" />
       <CardItem icon="i-heroicons-home" />
-      <CardItem icon="i-heroicons-home" />
-      <CardItem icon="i-heroicons-home" />
-      <CardItem icon="i-heroicons-home" />
-      <CardItem icon="i-heroicons-home" />
-      <CardItem icon="i-heroicons-home" />
+      <ULink href="/category">
+        <CardItem background="bg-blue-300" icon="material-symbols:more-horiz" />
+      </ULink>
     </div>
   </div>
 </template>

@@ -1,23 +1,24 @@
 <script setup lang="ts">
-const items = [
-  {
-    label: "首頁",
-    icon: "i-heroicons-home",
-    route: "home",
-  },
-  {
-    label: "進階搜尋",
-    icon: "i-heroicons-magnifying-glass",
-    route: "search",
-  },
-];
+  const router = useRouter();
 
-const changeTab = (idx: number) => {
-  console.log(items[idx]?.route);
-};
+  const items = [
+    {
+      label: '首頁',
+      icon: 'i-heroicons-home',
+      route: '/'
+    },
+    {
+      label: '進階搜尋',
+      icon: 'i-heroicons-magnifying-glass',
+      route: '/advanced-search'
+    }
+  ];
+
+  const changeTab = (idx: number) => {
+    router.push({ path: items[idx].route });
+  };
 </script>
 
 <template>
-  <!-- 改 UNavigationMenu  -->
-  <UTabs class="px-2" :items="items" @change="changeTab" />
+  <UTabs class="px-2" :items="items" @update:model-value="changeTab" />
 </template>
