@@ -3,10 +3,10 @@
 </script>
 
 <template>
-  <!-- Main Layout -->
-  <div class="min-h-svh flex flex-col">
-    <!-- Header -->
-    <header class="bg-primary rounded-b-[35px] shadow mb-6 fixed-header">
+  <!-- // - Main Layout -->
+  <div class="min-h-screen flex flex-col relative">
+    <!-- // - Header -->
+    <header class="bg-primary rounded-b-[35px] shadow fixed-header">
       <!-- Toolbar -->
       <div class="px-8 pt-8 pb-16 relative">
         <div class="flex items-center justify-between">
@@ -36,13 +36,12 @@
         </div>
       </div>
     </header>
-
-    <!-- Page Content -->
-    <main class="flex-1 overflow-auto pb-8 main-content">
+    <!-- // - Page Content -->
+    <main class="flex-1 main-content">
       <NuxtPage />
     </main>
 
-    <!-- Footer -->
+    <!-- // - Footer -->
     <footer class="fixed bottom-0 left-0 right-0 z-50">
       <FooterTab />
     </footer>
@@ -54,12 +53,12 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; /* 確保 header 在最上層 */
+    z-index: 1000;
   }
 
   .main-content {
-    margin-top: 132px; /* 根據 header 的高度調整 */
-    padding: 20px; /* 根據需要設定內邊距 */
-    margin-bottom: 25px;
+    padding: 20px;
+    margin-top: 132px;
+    margin-bottom: 48px;
   }
 </style>

@@ -1,23 +1,42 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
-  compatibilityDate: "2024-10-22",
-  modules: ["@nuxt/ui", "@nuxt/eslint"],
+  compatibilityDate: '2024-10-22',
+  modules: ['@nuxt/ui', '@nuxt/eslint'],
   ssr: false,
   devtools: { enabled: true },
   // vite: {
   //   server: { hmr: { protocol: "wss" } },
   // },
   nitro: {
-    preset: "static",
+    preset: 'static'
   },
 
-  css: ["~/styles/main.css"],
+  css: ['~/styles/main.css'],
 
   colorMode: {
-    preference: "light",
+    preference: 'light'
   },
   fonts: {
-    provider: "google",
+    provider: 'google'
   },
+
+  app: {
+    head: {
+      meta: [
+        {
+          'http-equiv': 'Cache-Control',
+          content: 'no-cache, no-store, must-revalidate'
+        },
+        {
+          'http-equiv': 'Pragma',
+          content: 'no-cache'
+        },
+        {
+          'http-equiv': 'Expires',
+          content: '0'
+        }
+      ]
+    }
+  }
 });

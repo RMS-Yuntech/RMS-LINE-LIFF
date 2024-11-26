@@ -1,5 +1,7 @@
 {
   "name": "nuxt-app",
+  "version": "0.0.1",
+  "update": "2024/11/26",
   "private": true,
   "type": "module",
   "scripts": {

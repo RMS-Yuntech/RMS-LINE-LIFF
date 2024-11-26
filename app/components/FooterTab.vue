@@ -14,8 +14,11 @@
     }
   ];
 
-  const changeTab = (idx: number) => {
-    router.push({ path: items[idx].route });
+  const changeTab = (payload: string | number) => {
+    const idx = typeof payload === 'number' ? payload : parseInt(payload, 10);
+    if (items[idx]) {
+      router.push({ path: items[idx].route });
+    }
   };
 </script>
 
