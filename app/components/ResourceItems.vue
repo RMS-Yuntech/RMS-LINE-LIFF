@@ -50,7 +50,13 @@
         <div
           class="w-[64px] h-[64px] flex items-center justify-center bg-gray-100 rounded"
         >
+          <UIcon
+            v-if="item.type === 'article'"
+            name="i-heroicons-document-text"
+            size="64px"
+          />
           <img
+            v-else
             :src="item.thumbnail"
             :alt="item.title"
             class="max-w-[64px] max-h-[64px] object-contain"

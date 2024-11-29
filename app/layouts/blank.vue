@@ -7,7 +7,10 @@
     <!-- // - Main Layout -->
     <div class="min-h-svh flex flex-col">
       <!-- // - Header -->
-      <header class="bg-primary rounded-b-[35px] shadow fixed-header">
+      <header
+        class="bg-primary rounded-b-[35px] shadow"
+        :class="$style['fixed-header']"
+      >
         <!-- // - Toolbar -->
         <div class="px-8 pt-4 pb-4 relative">
           <div class="flex items-center justify-center">
@@ -27,7 +30,7 @@
       </header>
 
       <!-- // - Page Content -->
-      <main class="flex-1 overflow-auto pb-8 main-content">
+      <main class="flex-1 overflow-auto pb-8" :class="$style['main-content']">
         <NuxtPage />
       </main>
     </div>
@@ -39,7 +42,7 @@
   </div>
 </template>
 
-<style scoped>
+<style module>
   .fixed-header {
     position: fixed;
     top: 0;

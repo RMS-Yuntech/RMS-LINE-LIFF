@@ -13,7 +13,10 @@
   <!-- // - Main Layout -->
   <div class="min-h-screen flex flex-col relative">
     <!-- // - Header -->
-    <header class="bg-primary rounded-b-[35px] shadow fixed-header">
+    <header
+      class="bg-primary rounded-b-[35px] shadow"
+      :class="$style['fixed-header']"
+    >
       <!-- Toolbar -->
       <div class="px-8 pt-8 pb-16 relative">
         <div class="flex items-center justify-between">
@@ -47,7 +50,7 @@
       </div>
     </header>
     <!-- // - Page Content -->
-    <main class="flex-1 main-content">
+    <main class="flex-1" :class="$style['main-content']">
       <NuxtPage />
     </main>
 
@@ -58,7 +61,7 @@
   </div>
 </template>
 
-<style scoped>
+<style module>
   .fixed-header {
     position: fixed;
     top: 0;
