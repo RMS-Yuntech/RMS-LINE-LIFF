@@ -60,6 +60,7 @@
   "files.autoSave": "onFocusChange",
   "css.customData": [".vscode/tailwind.json"],
   "cSpell.words": [
+    "BLACKPINK",
     "camelcase",
     "esbenp",
     "heroicons",
@@ -68,8 +69,13 @@
     "nuxt",
     "nuxtjs",
     "Parens",
+    "ROSÉ",
+    "Sheeran",
+    "tabler",
     "tailwindcss",
+    "tshirt",
     "zeabur"
   ],
-  
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "emmet.showSuggestionsAsSnippets": true
 }

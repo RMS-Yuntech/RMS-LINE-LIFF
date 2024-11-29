@@ -34,14 +34,18 @@
 
 <template>
   <UButton
+    class="text-gray-800"
     :class="[
       computedClasses.card,
       props.background,
       'flex',
+      'flex-col',
       'items-center',
-      'justify-center'
+      'justify-center',
+      'gap-2'
     ]"
   >
     <UIcon :name="props.icon" :class="[computedClasses.icon]" />
+    <slot />
   </UButton>
 </template>

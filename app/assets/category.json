@@ -1,0 +1,76 @@
+[
+  { "id": 1, "name": "科技", "icon": "i-mdi-laptop", "order": 1 },
+  {
+    "id": 2,
+    "name": "美妝",
+    "icon": "i-material-symbols-face-retouching-natural",
+    "order": 2
+  },
+  { "id": 3, "name": "K-Pop", "icon": "i-mdi-music-note", "order": 3 },
+  { "id": 4, "name": "貓咪", "icon": "i-mdi-cat", "order": 4 },
+  { "id": 5, "name": "棒球", "icon": "i-mdi-baseball", "order": 5 },
+  { "id": 6, "name": "旅遊", "icon": "i-mdi-map-outline", "order": 6 },
+  {
+    "id": 7,
+    "name": "行動支付",
+    "icon": "i-mdi-credit-card-outline",
+    "order": 7
+  },
+  {
+    "id": 8,
+    "name": "健身",
+    "icon": "i-solar-dumbbell-large-minimalistic-outline",
+    "order": 8
+  },
+  { "id": 9, "name": "AI 技術", "icon": "i-mdi-robot-outline", "order": 9 },
+  { "id": 10, "name": "電影", "icon": "i-mdi-filmstrip", "order": 10 },
+  {
+    "id": 11,
+    "name": "數位行銷",
+    "icon": "i-mdi-bullhorn-outline",
+    "order": 11
+  },
+  {
+    "id": 12,
+    "name": "健康飲食",
+    "icon": "i-mdi-food-apple-outline",
+    "order": 12
+  },
+  { "id": 13, "name": "家居裝潢", "icon": "i-mdi-home-outline", "order": 13 },
+  { "id": 14, "name": "攝影", "icon": "i-mdi-camera-outline", "order": 14 },
+  {
+    "id": 15,
+    "name": "電競",
+    "icon": "i-mdi-gamepad-variant-outline",
+    "order": 15
+  },
+  { "id": 16, "name": "財經", "icon": "i-tabler-chart-bar", "order": 16 },
+  { "id": 17, "name": "音樂", "icon": "i-mdi-headphones", "order": 17 },
+  { "id": 18, "name": "藝術", "icon": "i-mdi-palette-outline", "order": 18 },
+  { "id": 19, "name": "汽車", "icon": "i-mdi-car-outline", "order": 19 },
+  { "id": 20, "name": "教育", "icon": "i-mdi-school-outline", "order": 20 },
+  { "id": 21, "name": "程式設計", "icon": "i-mdi-code-tags", "order": 21 },
+  {
+    "id": 22,
+    "name": "時尚",
+    "icon": "i-mdi-tshirt-crew-outline",
+    "order": 22
+  },
+  { "id": 23, "name": "手工藝", "icon": "i-mdi-scissors-cutting", "order": 23 },
+  {
+    "id": 24,
+    "name": "美食",
+    "icon": "i-mdi-silverware-fork-knife",
+    "order": 24
+  },
+  { "id": 25, "name": "寵物", "icon": "i-mdi-dog", "order": 25 },
+  { "id": 26, "name": "飲品", "icon": "i-mdi-coffee-outline", "order": 26 },
+  { "id": 27, "name": "瑜伽", "icon": "i-mdi-yoga", "order": 27 },
+  { "id": 28, "name": "園藝", "icon": "i-mdi-flower-outline", "order": 28 },
+  { "id": 29, "name": "寫作", "icon": "i-mdi-pencil-outline", "order": 29 },
+  { "id": 30, "name": "登山", "icon": "i-mdi-mountain", "order": 30 },
+  { "id": 31, "name": "攝影", "icon": "i-mdi-camera-outline", "order": 31 },
+  { "id": 32, "name": "星座", "icon": "i-mdi-star-outline", "order": 32 },
+  { "id": 33, "name": "愛情", "icon": "i-mdi-heart-outline", "order": 33 },
+  { "id": 34, "name": "冒險", "icon": "i-mdi-compass-outline", "order": 34 }
+]

@@ -1,5 +1,12 @@
 <script setup lang="ts">
+  const { hideFooter } = useFooter();
+  const router = useRouter();
+
   const searchText = ref('');
+
+  const switchToSearch = () => {
+    router.push('/advanced-search');
+  };
 </script>
 
 <template>
@@ -15,11 +22,13 @@
 
           <!-- Avatar -->
           <div class="w-18">
-            <UAvatar
-              size="lg"
-              src="https://cdn.quasar.dev/img/boy-avatar.png"
-              alt="User avatar"
-            />
+            <ULink href="/profile">
+              <UAvatar
+                src="https://www.svgrepo.com/show/446530/avatar.svg"
+                alt="User avatar"
+                size="3xl"
+              />
+            </ULink>
           </div>
         </div>
 
@@ -32,6 +41,7 @@
             variant="outline"
             class="w-full"
             size="xl"
+            @click="switchToSearch"
           />
         </div>
       </div>
@@ -42,7 +52,7 @@
     </main>
 
     <!-- // - Footer -->
-    <footer class="fixed bottom-0 left-0 right-0 z-50">
+    <footer v-show="!hideFooter" class="fixed bottom-0 left-0 right-0 z-50">
       <FooterTab />
     </footer>
   </div>
@@ -58,7 +68,7 @@
 
   .main-content {
     padding: 20px;
-    margin-top: 132px;
+    margin-top: 140px;
     margin-bottom: 48px;
   }
 </style>

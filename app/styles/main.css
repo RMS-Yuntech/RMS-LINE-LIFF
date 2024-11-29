@@ -1,13 +1,13 @@
-@import "tailwindcss";
-@import "@nuxt/ui";
+@import 'tailwindcss';
+@import '@nuxt/ui';
 
 @theme {
-  --font-family-sans: "Libre Franklin", "Noto Sans TC", "sans-serif";
+  --font-family-sans: 'Libre Franklin', 'Noto Sans TC', 'sans-serif';
 
   --color-primary: #4a90e2;
   --color-sky-500: #4a90e2;
 
-  --color-secondary: #cbd5e1;
+  --color-secondary: #e0e0e0;
 }
 
 :root {
