@@ -1,4 +1,3 @@
 {
-  "build_command": "pnpm generate",
-  "output_dir": ".output/public"
+  "build_command": "pnpm build"
 }
