@@ -14,26 +14,28 @@ const client = new line.messagingApi.MessagingApiClient({
 
 // 事件處理函式
 async function handleEvent(event: line.WebhookEvent) {
-  if (event.type !== 'message' || event.message.type !== 'text') {
-    // 忽略非文字訊息的事件
+  if (event.type !== 'message') {
     return null;
   }
 
-  // 創建一個回聲文字訊息
-  const echo: TextMessage = {
+  const message = event.message;
+  const resMsg: TextMessage = {
     type: 'text',
-    text: event.message.text
+    text: '暫時不支援此媒體類型'
   };
 
-  try {
-    const result = await client.replyMessage({
-      replyToken: event.replyToken,
-      messages: [echo]
-    });
-    console.log('Reply Message Result:', result);
-  } catch (error) {
-    console.error('Error replying message:', error);
+  if (message.type === 'text') {
+    resMsg.text = '您提供的內容是文字';
   }
+
+  if (message.type === 'image') {
+    resMsg.text = '您提供的內容是圖片';
+  }
+
+  await client.replyMessage({
+    replyToken: event.replyToken,
+    messages: [resMsg]
+  });
 }
 
 // Webhook 處理器
