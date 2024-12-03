@@ -11,14 +11,15 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "nuxt": "3.13.2",
-    "@nuxt/ui": "3.0.0-alpha.7"
+    "@nuxt/ui": "3.0.0-alpha.7",
+    "nuxt": "3.14.1592"
   },
   "devDependencies": {
-    "@nuxt/devtools": "1.6.0",
-    "@nuxt/eslint": "0.6.1",
-    "typescript": "5.6.3",
+    "@line/bot-sdk": "^9.5.0",
+    "@nuxt/devtools": "1.6.1",
+    "@nuxt/eslint": "0.7.2",
+    "typescript": "5.7.2",
     "vue-tsc": "2.1.10"
   },
-  "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
+  "packageManager": "pnpm@9.14.4"
 }

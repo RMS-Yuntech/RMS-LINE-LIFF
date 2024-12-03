@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   //   server: { hmr: { protocol: "wss" } },
   // },
   nitro: {
-    preset: 'static'
+    preset: 'node-server'
   },
 
   css: ['~/styles/main.css'],
