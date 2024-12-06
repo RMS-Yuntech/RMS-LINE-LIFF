@@ -5,14 +5,14 @@
 <template>
   <div>
     <!-- // - Main Layout -->
-    <div class="min-h-svh flex flex-col">
+    <div class="flex min-h-svh flex-col">
       <!-- // - Header -->
       <header
         class="bg-primary rounded-b-[35px] shadow"
         :class="$style['fixed-header']"
       >
         <!-- // - Toolbar -->
-        <div class="px-8 pt-4 pb-4 relative">
+        <div class="relative px-8 pt-4 pb-4">
           <div class="flex items-center justify-center">
             <!-- // - Back Arrow -->
             <UButton
@@ -22,7 +22,7 @@
               to="/"
             />
             <!-- // -  Title -->
-            <div class="text-gray-800 text-xl font-medium">
+            <div class="text-xl font-medium text-gray-800">
               <slot name="title" />
             </div>
           </div>
@@ -36,7 +36,7 @@
     </div>
 
     <!-- // - Footer -->
-    <footer v-show="!hideFooter" class="fixed bottom-0 left-0 right-0 z-50">
+    <footer v-show="!hideFooter" class="fixed right-0 bottom-0 left-0 z-50">
       <FooterTab />
     </footer>
   </div>

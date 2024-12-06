@@ -14,7 +14,7 @@
 <template>
   <div>
     <div class="flex justify-center">
-      <div class="flex gap-4 m-4">
+      <div class="m-4 flex gap-4">
         <!-- 左側大卡片 -->
         <CardItem size="xl" :icon="item.first[0].icon">
           {{ item.first[0].name }}
@@ -33,8 +33,8 @@
     </div>
 
     <!-- // 新增 label -->
-    <div class="flex flex-col gap-4 mb-2">
-      <span class="text-2xl">所有分類</span>
+    <div class="mb-2 flex flex-col gap-4">
+      <span class="text-2xl font-bold">所有分類</span>
     </div>
 
     <div class="columns-3 space-y-4">

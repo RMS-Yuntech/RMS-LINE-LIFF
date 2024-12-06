@@ -11,21 +11,21 @@
 
 <template>
   <!-- // - Main Layout -->
-  <div class="min-h-screen flex flex-col relative">
+  <div class="relative flex min-h-screen flex-col">
     <!-- // - Header -->
     <header
       class="bg-primary rounded-b-[35px] shadow"
       :class="$style['fixed-header']"
     >
       <!-- Toolbar -->
-      <div class="px-8 pt-8 pb-16 relative">
+      <div class="relative px-8 pt-8 pb-16">
         <div class="flex items-center justify-between">
           <!-- Title -->
-          <h1 class="text-gray-800 text-xl font-medium">歡迎使用資彙王</h1>
+          <h1 class="text-xl font-bold text-gray-800">歡迎使用資彙王</h1>
 
           <!-- Avatar -->
-          <div class="w-18">
-            <ULink href="/profile">
+          <div>
+            <ULink class="w-18" href="/profile">
               <UAvatar
                 src="https://www.svgrepo.com/show/446530/avatar.svg"
                 alt="User avatar"
@@ -36,7 +36,7 @@
         </div>
 
         <!-- Search Input -->
-        <div class="absolute -bottom-4 left-0 right-0 px-8 z-50">
+        <div class="absolute right-0 -bottom-4 left-0 z-50 px-8">
           <UInput
             v-model="searchText"
             placeholder="您想搜尋什麼？"
@@ -55,7 +55,7 @@
     </main>
 
     <!-- // - Footer -->
-    <footer v-show="!hideFooter" class="fixed bottom-0 left-0 right-0 z-50">
+    <footer v-show="!hideFooter" class="fixed right-0 bottom-0 left-0 z-50">
       <FooterTab />
     </footer>
   </div>
