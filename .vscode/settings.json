@@ -75,6 +75,7 @@
     "tabler",
     "tailwindcss",
     "tshirt",
+    "unplugin",
     "zeabur"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
