@@ -14,15 +14,18 @@
   const sizeClasses = {
     md: {
       card: 'w-24 h-24',
-      icon: 'w-8 h-8'
+      icon: 'w-8 h-8',
+      fontSize: 'text-sm'
     },
     lg: {
       card: 'w-32 h-32',
-      icon: 'w-12 h-12'
+      icon: 'w-12 h-12',
+      fontSize: 'text-md'
     },
     xl: {
       card: 'w-52 h-52',
-      icon: 'w-24 h-24'
+      icon: 'w-24 h-24',
+      fontSize: 'text-xl'
     }
   };
 
@@ -34,8 +37,9 @@
 
 <template>
   <UButton
-    class="text-gray-800"
+    class="font-bold text-gray-800"
     :class="[
+      computedClasses.fontSize,
       computedClasses.card,
       props.background,
       'flex',

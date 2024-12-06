@@ -4,14 +4,14 @@
 </script>
 
 <template>
-  <div>
+  <UApp>
     <NuxtLayout>
       <template #title>
-        {{ pageTitle }}
+        <span class="font-bold">{{ pageTitle }}</span>
       </template>
       <NuxtPage />
     </NuxtLayout>
-  </div>
+  </UApp>
 </template>
 
 <style>
