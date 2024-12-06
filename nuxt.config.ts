@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   compatibilityDate: '2024-10-22',
-  modules: ['@nuxt/ui', '@nuxt/eslint'],
+  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/test-utils/module'],
   ssr: false,
   devtools: { enabled: true },
   // vite: {
