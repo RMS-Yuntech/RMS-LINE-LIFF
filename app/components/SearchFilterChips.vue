@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  const selectedTypes = ref<string[]>([]);
+  const selectedTypes = inject('selected-types') as Ref<string[]>;
   const typeOptions = ref([
     { key: 'all', value: '全部', icon: 'i-heroicons-squares-2x2' },
     { key: 'website', value: '網站', icon: 'i-heroicons-globe-alt' },
@@ -10,34 +10,29 @@
   ]);
 
   const toggleType = (key: string) => {
-    // > 攔截取消全選時的行為
+    // Prevent deselecting 'all' when it's the only selection
     if (key === 'all' && selectedTypes.value.includes('all')) {
       return;
     }
 
-    // - 處理全部選項
-    // > 當點擊 all 時，若已選擇則清空所有選項，否則僅選擇 all
     if (key === 'all') {
-      if (selectedTypes.value.includes('all')) {
-        selectedTypes.value = [];
-      } else {
-        selectedTypes.value = ['all'];
-      }
+      selectedTypes.value = ['all'];
+      return;
     }
-    // - 處理其他選項
-    // > 先移除 all，再切換選擇狀態
-    else {
-      const index = selectedTypes.value.indexOf(key);
 
-      selectedTypes.value = selectedTypes.value.filter((t) => t !== 'all');
+    const newTypes = selectedTypes.value.filter((t) => t !== 'all');
+    const isSelected = newTypes.includes(key);
 
-      if (index === -1) {
-        selectedTypes.value.push(key);
-      } else {
-        selectedTypes.value.splice(index, 1);
-      }
+    if (isSelected) {
+      newTypes.splice(newTypes.indexOf(key), 1);
+    } else {
+      newTypes.push(key);
     }
+
+    selectedTypes.value = newTypes.length ? newTypes : ['all'];
   };
+
+  // 提供選擇的類型給其他元件使用
 
   onBeforeMount(() => {
     selectedTypes.value = ['all'];
@@ -45,7 +40,7 @@
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-2 mt-4">
+  <div class="mt-4 flex flex-wrap gap-2">
     <UButton
       v-for="item in typeOptions"
       :key="item.key"

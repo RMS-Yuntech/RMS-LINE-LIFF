@@ -1,11 +1,21 @@
 // 接收搜尋指令，呼叫 Gemini API，並回傳搜尋結果
 import resource from 'assets/resource.json';
 
-const getApiKey = () => {
+const apiKey = () => {
   return localStorage.getItem('GEMINI_API_KEY') || '';
 };
 
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-8b:generateContent?key=${getApiKey()}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-8b:generateContent`;
+
+interface GeminiResponse {
+  candidates: Array<{
+    content: {
+      parts: Array<{
+        text: string;
+      }>;
+    };
+  }>;
+}
 
 export const useGeminiSearch = async (input: string) => {
   const payload = {
@@ -39,16 +49,15 @@ export const useGeminiSearch = async (input: string) => {
   };
 
   try {
-    const response = await fetch(API_URL, {
+    const response = await $fetch<GeminiResponse>(API_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      query: { key: apiKey() },
       body: JSON.stringify(payload)
     });
 
-    const data = await response.json();
-    return JSON.parse(data.candidates[0].content.parts[0].text);
+    const text = response.candidates[0]?.content?.parts[0]?.text;
+
+    return text ? JSON.parse(text) : null;
   } catch (error) {
     console.error('Error calling Gemini API:', error);
     return null;

@@ -7,39 +7,53 @@
   });
 
   interface ResourceItem {
-    id: string; // 添加 id 屬性
+    id: string;
+    type: string; // 加入 type 屬性定義
     thumbnail: string;
     title: string;
   }
 
   const items = ref(resource);
   const status = inject('search-status') as Ref<string>;
+  const selectedTypes = inject('selected-types') as Ref<string[]>;
 
-  watch(status, (val) => {
-    if (val === 'not-found') {
-      items.value = [];
-      return;
-    }
+  watch(
+    [status, selectedTypes],
+    ([newStatus, newTypes]) => {
+      if (newStatus === 'not-found') {
+        items.value = [];
+        return;
+      }
 
-    if (!list.value || list.value.length === 0) {
-      items.value = resource;
-      return;
-    }
+      // 先根據搜尋結果過濾
+      let filteredItems =
+        !list.value || list.value.length === 0
+          ? resource
+          : resource.filter((item: ResourceItem) =>
+              list.value.includes(item.id)
+            );
 
-    items.value = resource.filter((item: ResourceItem) =>
-      list.value.includes(item.id)
-    );
-  });
+      // 再根據選擇的類型過濾
+      if (!newTypes.includes('all')) {
+        filteredItems = filteredItems.filter((item: ResourceItem) =>
+          newTypes.includes(item.type)
+        );
+      }
+
+      items.value = filteredItems;
+    },
+    { immediate: true }
+  );
 </script>
 
 <template>
   <div v-if="status === 'not-found'">
-    <div class="flex items-center justify-center h-[200px]">
+    <div class="flex h-[200px] items-center justify-center">
       <span class="text-lg text-gray-500">找不到符合的資源</span>
     </div>
   </div>
   <div v-else-if="status === 'loading'">
-    <div class="flex items-center justify-center h-[200px]">
+    <div class="flex h-[200px] items-center justify-center">
       <span class="text-lg text-gray-500">✨ 查詢中...</span>
     </div>
   </div>
@@ -48,7 +62,7 @@
     <UCard v-for="item in items" :key="item.title">
       <div class="flex gap-4">
         <div
-          class="w-[64px] h-[64px] flex items-center justify-center bg-gray-100 rounded"
+          class="flex h-[64px] w-[64px] items-center justify-center rounded bg-gray-100"
         >
           <UIcon
             v-if="item.type === 'article'"
@@ -59,7 +73,7 @@
             v-else
             :src="item.thumbnail"
             :alt="item.title"
-            class="max-w-[64px] max-h-[64px] object-contain"
+            class="max-h-[64px] max-w-[64px] object-contain"
           />
         </div>
         <div class="flex items-center">

@@ -6,6 +6,8 @@
   });
 
   const searchText = ref('');
+  const selectedTypes = ref<string[]>([]);
+  provide('selected-types', selectedTypes);
 
   const status = ref<string>('');
   provide('search-status', status);
@@ -24,7 +26,7 @@
 
 <template>
   <div>
-    <div class="flex items-center space-x-3 w-full max-w-2xl">
+    <div class="flex w-full max-w-2xl items-center space-x-3">
       <div class="flex-1">
         <!-- Input -->
         <UInput
