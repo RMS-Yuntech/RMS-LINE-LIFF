@@ -15,13 +15,15 @@ const client = new line.messagingApi.MessagingApiClient({
 // 事件處理函式
 async function handleEvent(event: line.WebhookEvent) {
   if (event.type !== 'message') {
+    console.log(event);
+
     return null;
   }
 
   const message = event.message;
   const resMsg: TextMessage = {
     type: 'text',
-    text: '暫時不支援此媒體類型'
+    text: '暫時不支援此媒體類型' + message
   };
 
   if (message.type === 'text') {
