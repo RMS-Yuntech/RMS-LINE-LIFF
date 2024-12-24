@@ -2,14 +2,19 @@
 import type { H3Event } from 'h3';
 import * as line from '@line/bot-sdk';
 import type { TextMessage } from '@line/bot-sdk';
+
+// env
+const runtimeConfig = useRuntimeConfig();
+const { channelSecret, channelAccessToken } = runtimeConfig;
+
 // LINE SDK 設定
 const config = {
-  channelSecret: process.env.CHANNEL_SECRET || '' // 設定頻道密鑰
+  channelSecret: channelSecret
 };
 
 // LINE SDK 客戶端
 const client = new line.messagingApi.MessagingApiClient({
-  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN || '' // 設定 token
+  channelAccessToken: channelAccessToken
 });
 
 // 事件處理函式

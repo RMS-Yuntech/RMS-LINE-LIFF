@@ -21,6 +21,11 @@ export default defineNuxtConfig({
     provider: 'google'
   },
 
+  runtimeConfig: {
+    channelSecret: process.env.CHANNEL_SECRET || '',
+    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN || ''
+  },
+
   app: {
     head: {
       meta: [
